@@ -14,7 +14,7 @@ module.exports = function(config) {
 
   var channel;
 
-  config.prefetch = config.prefetch || 10;
+  var prefetch = config.prefetch || 10;
 
   var ret = {
     /**
@@ -39,6 +39,7 @@ module.exports = function(config) {
         }
         channel = ch;
 
+        channel.prefetch(prefetch);
         channel.assertExchange(config.exchange, 'topic', {}, assertQueues);
       }
 
