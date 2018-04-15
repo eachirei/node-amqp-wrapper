@@ -13,7 +13,7 @@ module.exports = function (config) {
 
   var connection, channel;
 
-  var prefetch = config.prefetch || 10;
+  var prefetch = config.prefetch;
 
   /**
    * Connects and remembers the channel.
